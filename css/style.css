@@ -92,3 +92,37 @@
     height: 100vh;
     object-fit: cover;
 }
+
+/* Force Fullscreen & Prevent Scrollbars */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;  /* No scrolling */
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Background Video Fullscreen */
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Make Sure Faction Selection Buttons Stay Centered */
+#faction-buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px;
+}
+
+/* Hide Scrollbars in WebKit Browsers */
+::-webkit-scrollbar {
+    display: none;
+}
