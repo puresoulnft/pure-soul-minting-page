@@ -3,24 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pure Soul NFT - Faction Selection</title>
+    <title>Pure Soul NFT</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Choose Your Faction</h1>
-    <div class="faction-container">
-        <a href="mint-divine.html" class="faction divine">
-            <img src="images/divine-banner.jpg" alt="Divine Ascendants">
-            <h2>Divine Ascendants</h2>
-        </a>
-        <a href="mint-primordial.html" class="faction primordial">
-            <img src="images/primordial-banner.jpg" alt="Primordial Deities">
-            <h2>Primordial Deities</h2>
-        </a>
-        <a href="mint-fallen.html" class="faction fallen">
-            <img src="images/fallen-banner.jpg" alt="Fallen Titans">
-            <h2>Fallen Titans</h2>
-        </a>
+
+    <!-- Background Video -->
+    <div id="background-container">
+        <video id="background-video" autoplay loop playsinline>
+            <source src="images/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
+
+    <!-- Choose Your Faction Text -->
+    <div id="faction-text">
+        <h1>Choose Your Faction</h1>
+    </div>
+
+    <!-- Faction Selection Buttons -->
+    <div id="faction-buttons">
+        <button class="faction-button divine" onclick="selectFaction('divine')">Divine Ascendants</button>
+        <button class="faction-button primordial" onclick="selectFaction('primordial')">Primordial Deities</button>
+        <button class="faction-button fallen" onclick="selectFaction('fallen')">Fallen Titans</button>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        window.addEventListener("pageshow", function(event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+      </script>
 </body>
 </html>

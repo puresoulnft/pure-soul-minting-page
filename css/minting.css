@@ -1,39 +1,63 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #0a0a0a;
-    color: white;
-    text-align: center;
+* Reset */
+body, html {
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    background: black;
 }
 
-h1 {
-    margin-top: 50px;
+/* Video Styling */
+#faction-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
 }
 
-button {
-    background-color: gold;
-    color: black;
-    font-size: 18px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+#faction-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Faction Banner (Hidden Initially) */
+.hidden {
+    display: none;
+}
+
+#faction-banner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    text-align: center;
+    background: black;
+}
+
+#faction-banner {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 10%;
+}
+
+/* Minting Button */
+#mint-button {
     margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background: gold;
+    border: none;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-button:hover {
-    background-color: orange;
-}
-
-#mintingSection {
-    margin-top: 30px;
-}
-
-input[type="number"] {
-    font-size: 18px;
-    padding: 5px;
-    width: 50px;
-    text-align: center;
+#mint-button:hover {
+    transform: scale(1.1);
+    background: #ffd700;
 }

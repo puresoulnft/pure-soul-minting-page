@@ -1,41 +1,94 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: white;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    margin-top: 50px;
-}
-
-.faction-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.faction {
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    border: 2px solid white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-    transition: 0.3s;
-}
-
-.faction img {
+/* Background Video */
+#background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
 }
 
-.faction:hover {
-    transform: scale(1.05);
-    border-color: gold;
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Centered "Choose Your Faction" Text - Smaller & Better Font */
+#faction-text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.9);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+}
+
+/* Faction Buttons - Placed Over Portals */
+#faction-buttons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* General Button Styles */
+.faction-button {
+    position: absolute;
+    width: 60px;  /* Increased from 40px */
+    height: 60px; /* Increased from 40px */
+    border-radius: 50%;
+    border: 1px solid white; /* Clearer border */
+    font-size: 0.5rem; /* Slightly larger text */
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4); /* Slightly darker for readability */
+    box-shadow: 0px 0px 6px white;
+    opacity: 0.85; /* Keeps it subtle */
+}
+
+/* Adjusted Button Placement Over Portals */
+.faction-button.divine {
+    left: 18.5%;
+    top: 50.5%;
+    background: rgba(255, 215, 0, 0.6);
+    box-shadow: 0px 0px 8px gold;
+}
+
+.faction-button.primordial {
+    left: 48.3%;
+    top: 45.2%;
+    background: rgba(65, 105, 225, 0.6);
+    box-shadow: 0px 0px 8px royalblue;
+}
+
+.faction-button.fallen {
+    left: 78.5%;
+    top: 49.8%;
+    background: rgba(220, 20, 60, 0.6);
+    box-shadow: 0px 0px 8px crimson;
+}
+
+/* Button Hover Effects */
+.faction-button:hover {
+    box-shadow: 0px 0px 12px white;
+    opacity: 1;
+}
+#faction-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
 }
