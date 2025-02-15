@@ -146,3 +146,16 @@ body.fallen {
     background: url('../images/fallen-bg.jpg') no-repeat center center fixed;
     background-size: cover;
 }
+
+video {
+    width: 100%;
+    height: auto;
+    max-width: 1920px;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
