@@ -151,144 +151,84 @@ body.fallen {
 video {
     width: 100%;
     height: auto;
-    max-width: 1920px; /* Prevents it from getting too large */
     display: block;
-    margin: 0 auto; /* Centers video */
+    margin: 0 auto;
+    object-fit: cover;
 }
 
-/* Ensure background videos cover the screen properly */
-.background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover; /* Keeps proportions while filling screen */
-    z-index: -1; /* Keeps it behind other content */
-}
-
-/* Mobile Responsiveness */
+/* Mobile Layout Adjustments */
 @media (max-width: 768px) {
     .faction-container {
-        padding: 30px 10px; /* Less padding for smaller screens */
+        padding: 20px 10px;
     }
 
     .faction-header h1 {
-        font-size: 2rem; /* Smaller title for mobile */
+        font-size: 1.8rem; /* Reduce title size */
     }
 
     .faction-scroll {
-        width: 90%; /* Wider scroll box on mobile */
-        padding: 15px;
+        width: 90%;
+        padding: 12px;
     }
 
     .tier-container h2 {
-        font-size: 1.5rem; /* Reduce tier title size */
+        font-size: 1.4rem;
     }
 
     .tier-list {
-        flex-direction: column; /* Stack tiers vertically on mobile */
+        flex-direction: column; /* Stack tiers */
         align-items: center;
     }
 
     .tier-box {
-        width: 80%; /* Make tier buttons larger */
+        width: 85%; /* Full-width buttons */
         font-size: 1rem;
     }
 
     .connect-wallet, .mint-button {
-        width: 90%; /* Buttons take up more space on mobile */
+        width: 85%;
         font-size: 1rem;
         padding: 10px;
     }
 }
 
-/* Video Responsiveness */
-video {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-}
-
-/* Ensure Background Videos Fit on Mobile */
+/* Ensure Background & Faction Videos Fit */
 @media (max-width: 768px) {
     #background-video,
     #faction-video {
-        width: 100vw; /* Make it full width */
-        height: auto; /* Maintain aspect ratio */
+        width: 100vw;
+        height: auto;
         object-fit: cover;
     }
 }
-/* Responsive Typography & Buttons */
+
+/* Make Faction Selection Buttons Stack */
 @media (max-width: 768px) {
-    .faction-header h1 {
-        font-size: 2rem; /* Reduce title size */
+    #faction-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
-    .faction-lore {
-        font-size: 1rem; /* Reduce lore text */
-        max-width: 90%; /* Ensure it doesn’t stretch too wide */
-    }
-
-    .tier-box {
-        width: 90px; /* Make tier buttons smaller */
-        font-size: 1rem;
-        padding: 10px 15px;
-    }
-
-    .connect-wallet, .mint-button {
-        width: 200px; /* Adjust button width */
-        font-size: 1rem;
-        padding: 10px 15px;
+    .faction-button {
+        width: 80%;
+        font-size: 1.1rem;
+        padding: 12px;
     }
 }
-/* Responsive Video Scaling */
+
+/* Force Video Sound to Work */
+video {
+    muted: false !important;
+    autoplay: true;
+    playsinline: true;
+}
+
+/* Prevent Videos from Being Too Large */
 @media (max-width: 768px) {
     video {
-        width: 100%;  /* Make sure it scales within the screen */
-        height: auto; /* Keep aspect ratio */
-    }
-
-    .faction-container {
-        padding: 30px 15px; /* Reduce padding for smaller screens */
-    }
-}
-/* Responsive Font & Button Adjustments */
-@media (max-width: 768px) {
-    .faction-header h1 {
-        font-size: 2rem; /* Reduce title size */
-    }
-
-    .faction-lore {
-        font-size: 1rem; /* Smaller text for better readability */
-        max-width: 90%;
-    }
-
-    .tier-box {
-        font-size: 1rem; /* Adjust tier button text */
-        padding: 10px 15px;
-        width: 100px; /* Reduce width to fit better */
-    }
-
-    .connect-wallet, .mint-button {
-        font-size: 1rem; /* Reduce button text size */
-        padding: 10px 15px;
-        width: 200px; /* Keep buttons proportional */
-    }
-}
-/* Responsive Image & Video Adjustments */
-@media (max-width: 768px) {
-    .faction-container {
-        padding: 30px 10px; /* Reduce padding for better spacing */
-    }
-
-    .faction-video {
-        width: 100%; /* Make videos fill the screen width */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    .faction-banner {
-        max-width: 100%; /* Ensure banners fit within the screen */
-        height: auto; /* Maintain aspect ratio */
+        max-width: 100%;
+        height: auto;
     }
 }
