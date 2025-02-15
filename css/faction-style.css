@@ -1,0 +1,294 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Add a Dark Overlay for Readability */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Darken background slightly */
+    z-index: -1;
+}
+
+/* Faction Container */
+.faction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+/* Faction Header */
+.faction-header h1 {
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Glow Effect */
+}
+
+/* Faction Lore Box */
+.faction-scroll {
+    width: 60%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75); /* Slightly darker */
+    border: 2px solid gold;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Tiers Section */
+.tier-container {
+    margin-top: 40px;
+}
+
+.tier-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.tier-list {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Tier Buttons - Add 3D Effect */
+.tier-box {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 120px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tier-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Unique Tier Colors */
+.legendary { background: linear-gradient(180deg, gold, orange); color: black; }
+.epic { background: linear-gradient(180deg, purple, darkviolet); }
+.rare { background: linear-gradient(180deg, royalblue, navy); }
+.relics { background: linear-gradient(180deg, darkred, crimson); }
+
+/* Minting Section */
+.minting-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Buttons - Fix Size & Effects */
+.connect-wallet, .mint-button {
+    width: 250px;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+/* Connect Wallet - Glowing Hover */
+.connect-wallet {
+    background: #007bff;
+    box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.6);
+}
+
+.connect-wallet:hover {
+    box-shadow: 0px 0px 25px rgba(0, 123, 255, 1);
+    transform: scale(1.05);
+}
+
+/* Mint Button - Disabled */
+.mint-button.disabled {
+    background-color: gray;
+    color: white;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Background Images for Factions */
+body.divine {
+    background: url('../images/divine-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.primordial {
+    background: url('../images/primordial-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.fallen {
+    background: url('../images/fallen-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Make videos scale properly on mobile */
+video {
+    width: 100%;
+    height: auto;
+    max-width: 1920px; /* Prevents it from getting too large */
+    display: block;
+    margin: 0 auto; /* Centers video */
+}
+
+/* Ensure background videos cover the screen properly */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Keeps proportions while filling screen */
+    z-index: -1; /* Keeps it behind other content */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .faction-container {
+        padding: 30px 10px; /* Less padding for smaller screens */
+    }
+
+    .faction-header h1 {
+        font-size: 2rem; /* Smaller title for mobile */
+    }
+
+    .faction-scroll {
+        width: 90%; /* Wider scroll box on mobile */
+        padding: 15px;
+    }
+
+    .tier-container h2 {
+        font-size: 1.5rem; /* Reduce tier title size */
+    }
+
+    .tier-list {
+        flex-direction: column; /* Stack tiers vertically on mobile */
+        align-items: center;
+    }
+
+    .tier-box {
+        width: 80%; /* Make tier buttons larger */
+        font-size: 1rem;
+    }
+
+    .connect-wallet, .mint-button {
+        width: 90%; /* Buttons take up more space on mobile */
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+/* Video Responsiveness */
+video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Ensure Background Videos Fit on Mobile */
+@media (max-width: 768px) {
+    #background-video,
+    #faction-video {
+        width: 100vw; /* Make it full width */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover;
+    }
+}
+/* Responsive Typography & Buttons */
+@media (max-width: 768px) {
+    .faction-header h1 {
+        font-size: 2rem; /* Reduce title size */
+    }
+
+    .faction-lore {
+        font-size: 1rem; /* Reduce lore text */
+        max-width: 90%; /* Ensure it doesn’t stretch too wide */
+    }
+
+    .tier-box {
+        width: 90px; /* Make tier buttons smaller */
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    .connect-wallet, .mint-button {
+        width: 200px; /* Adjust button width */
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+/* Responsive Video Scaling */
+@media (max-width: 768px) {
+    video {
+        width: 100%;  /* Make sure it scales within the screen */
+        height: auto; /* Keep aspect ratio */
+    }
+
+    .faction-container {
+        padding: 30px 15px; /* Reduce padding for smaller screens */
+    }
+}
+/* Responsive Font & Button Adjustments */
+@media (max-width: 768px) {
+    .faction-header h1 {
+        font-size: 2rem; /* Reduce title size */
+    }
+
+    .faction-lore {
+        font-size: 1rem; /* Smaller text for better readability */
+        max-width: 90%;
+    }
+
+    .tier-box {
+        font-size: 1rem; /* Adjust tier button text */
+        padding: 10px 15px;
+        width: 100px; /* Reduce width to fit better */
+    }
+
+    .connect-wallet, .mint-button {
+        font-size: 1rem; /* Reduce button text size */
+        padding: 10px 15px;
+        width: 200px; /* Keep buttons proportional */
+    }
+}
+/* Responsive Image & Video Adjustments */
+@media (max-width: 768px) {
+    .faction-container {
+        padding: 30px 10px; /* Reduce padding for better spacing */
+    }
+
+    .faction-video {
+        width: 100%; /* Make videos fill the screen width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .faction-banner {
+        max-width: 100%; /* Ensure banners fit within the screen */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
