@@ -218,17 +218,24 @@ video {
     }
 }
 
-/* Force Video Sound to Work */
-video {
-    muted: false !important;
-    autoplay: true;
-    playsinline: true;
-}
-
 /* Prevent Videos from Being Too Large */
 @media (max-width: 768px) {
     video {
         max-width: 100%;
         height: auto;
     }
+}
+/* Remove Video Controls */
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+video {
+    width: 100vw; /* Make sure it takes up the full screen */
+    height: 100vh;
+    object-fit: cover;
+    border: none;
+    outline: none;
+    display: block;
+    background-color: black; /* Prevents white flash */
 }
